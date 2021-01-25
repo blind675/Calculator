@@ -4,63 +4,55 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, StatusBar} from 'react-native';
+import {SafeAreaView, View, StatusBar} from 'react-native';
+import AppStyle from './src/AppStyle';
+import Button from './src/components/SoftUI_button';
 
 function App() {
-  return (
-    <View style={styles.screenContainer}>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ alignSelf: "stretch", felx: 1, }}>
-        <View style={styles.container}>
-          <View style={styles.topShadow}>
-            <View style={styles.bottomShadow}>
-              <View style={[styles.inner , {width: 60, height: 60, borderRadius: 30}]}>
-                <Text>1</Text>
-              </View>
-            </View>
-          </View>
+    return (
+        <View style={AppStyle.instance.style.screenContainer}>
+            <StatusBar barStyle="dark-content" />
+            <SafeAreaView style={AppStyle.instance.style.safeAreaContainer}>
+                <View style={AppStyle.instance.style.container}>
+                    <View
+                        style={{
+                            backgroundColor: 'red',
+                            height: 100
+                        }}
+                    />
+                    <View style={AppStyle.instance.style.row}>
+                        <Button title="AC" />
+                        <Button title="+/-" />
+                        <Button title="%" />
+                        <Button title="+" />
+                    </View>
+                    <View style={AppStyle.instance.style.row}>
+                        <Button title="7" highlight />
+                        <Button title="8" highlight />
+                        <Button title="9" highlight />
+                        <Button title="*" />
+                    </View>
+                    <View style={AppStyle.instance.style.row}>
+                        <Button title="4" highlight />
+                        <Button title="5" highlight />
+                        <Button title="6" highlight />
+                        <Button title="-" />
+                    </View>
+                    <View style={AppStyle.instance.style.row}>
+                        <Button title="1" highlight />
+                        <Button title="2" highlight />
+                        <Button title="3" highlight />
+                        <Button title="+" />
+                    </View>
+                    <View style={AppStyle.instance.style.row}>
+                        <Button title="0" highlight doubleSize />
+                        <Button title="." />
+                        <Button title="=" />
+                    </View>
+                </View>
+            </SafeAreaView>
         </View>
-      </SafeAreaView>
-    </View>
-  );
+    );
 }
-
-const styles = StyleSheet.create({
-  screenContainer: {
-    flex: 1, 
-    backgroundColor: "#DEE9FD",
-    alignItems: 'center'
-  },
-  container: {
-    marginTop: 32,
-    marginHorizontal: 32,
-  },
-  inner: {
-    backgroundColor:"#DEE9F7",
-    borderColor: "#E2ECFD",
-    borderWidth: 10,
-    alignContent: 'center',
-    justifyContent: 'center',
-  },
-  topShadow: {
-    shadowOffset: {
-      width: -6,
-      height: -6,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 6,
-    shadowColor: "#FBFFFF",
-  },
-  bottomShadow:{
-    shadowOffset: {
-      width: 6,
-      height: 6,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 6,
-    shadowColor: "#B7C4DD",
-  }
-
-});
 
 export default App;
