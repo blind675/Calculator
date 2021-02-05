@@ -7,6 +7,7 @@ import React from 'react';
 import {SafeAreaView, View, StatusBar} from 'react-native';
 import AppStyle from './src/AppStyle';
 import Button from './src/components/SoftUI_button';
+import Label from './src/components/SoftUI_label';
 
 function App() {
     return (
@@ -14,12 +15,7 @@ function App() {
             <StatusBar barStyle="dark-content" />
             <SafeAreaView style={AppStyle.instance.style.safeAreaContainer}>
                 <View style={AppStyle.instance.style.container}>
-                    <View
-                        style={{
-                            backgroundColor: 'red',
-                            height: 100
-                        }}
-                    />
+                    <Label />
                     <View style={AppStyle.instance.style.row}>
                         <Button title="AC" />
                         <Button title="+/-" />

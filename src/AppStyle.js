@@ -1,7 +1,16 @@
 import {StyleSheet} from 'react-native';
+import {Dimensions} from 'react-native';
 
 export default class AppStyle {
     static instance = AppStyle.instance || new AppStyle();
+
+    static _windowWidth = Dimensions.get('window').width;
+
+    static _buttonWidth =
+        (this._windowWidth -
+            this.size.margin.normal * 2 -
+            this.size.margin.small * 8) /
+        4;
 
     get color() {
         return {
@@ -30,6 +39,12 @@ export default class AppStyle {
             },
             border: {
                 width: 1,
+            },
+            button: {
+                height: this._buttonWidth,
+                width: this._buttonWidth,
+                doubleWidth: this._buttonWidth * 2 + this.size.margin.small * 2,
+                borderRadius: this.buttonWidth / 2,
             },
         };
     }
