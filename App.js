@@ -13,7 +13,8 @@ function App() {
     return (
         <View style={AppStyle.instance.style.screenContainer}>
             <StatusBar barStyle="dark-content" />
-            <SafeAreaView style={AppStyle.instance.style.safeAreaContainer}>
+            <SafeAreaView>
+                <View style={{flex: 1}} />
                 <View style={AppStyle.instance.style.container}>
                     <Label />
                     <View style={AppStyle.instance.style.row}>
@@ -46,6 +47,7 @@ function App() {
                         <Button title="=" />
                     </View>
                 </View>
+                <View style={{flex: 1}} />
             </SafeAreaView>
         </View>
     );
