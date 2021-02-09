@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import AppStyle from '../AppStyle';
 
 function Button(props) {
@@ -25,7 +25,11 @@ function Button(props) {
     };
 
     return (
-        <View style={AppStyle.instance.style.buttonContainer}>
+        <TouchableOpacity
+            style={AppStyle.instance.style.buttonContainer}
+            onPress={() => {
+                props.onClick && props.onClick(props.title);
+            }}>
             <View style={AppStyle.instance.style.buttonTopShadow}>
                 <View style={AppStyle.instance.style.buttonBottomShadow}>
                     <View
@@ -37,7 +41,7 @@ function Button(props) {
                     </View>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 

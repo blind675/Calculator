@@ -49,6 +49,9 @@ export default class AppStyle {
 
     get style() {
         return StyleSheet.create({
+            fullContainer: {
+                flex: 1,
+            },
             screenContainer: {
                 flex: 1,
                 backgroundColor: this.color.appBackground_LightGray,
@@ -72,9 +75,9 @@ export default class AppStyle {
                 padding: this.size.margin.normal,
             },
             labelSmallText: {
-                marginVertical: this.size.margin.small,
+                marginTop: this.size.margin.small,
                 textAlign: 'right',
-                fontSize: 20, // TODO: create text size prop
+                fontSize: 18, // TODO: create text size prop
                 fontWeight: 'bold',
                 color: this.color.buttonText_Gray,
             },
